@@ -2,6 +2,9 @@
 
 农历转换工具
 
+[![npm](https://img.shields.io/npm/v/@shuimo-design/lunar?color=%23c50315&style=flat-square)](https://www.npmjs.com/package/@shuimo-design/lunar)
+[![codecov](https://codecov.io/gh/shuimo-design/lunar/graph/badge.svg?token=C094CF7FVT)](https://codecov.io/gh/shuimo-design/lunar)
+
 A Chinese lunar calendar conversion tool.
 
 ## Usage
