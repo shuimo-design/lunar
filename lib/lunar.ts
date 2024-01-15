@@ -14,13 +14,11 @@ import { datetimeFormat } from './tools/datetimeFormat';
 export const lunar = (datetime: Date | string | number) => {
 
   const dObj = datetimeFormat(datetime);
-  console.log(dObj);
 
   const lunarDate = solarToLunar({ year: dObj.year, month: dObj.month, day: dObj.day });
   const lunarYear = getYearJiaZi(lunarDate.year);
 
   const terms = getTermsByYear(dObj.year);
-  console.log(terms);
   let term: undefined | string;
 
   terms.forEach(t => {
