@@ -2,7 +2,8 @@
   "name": "@shuimo-design/lunar",
   "type": "module",
   "version": "0.0.1",
-  "description": "",
+  "description": "javascript solar to chinese lunar tool",
+  "author": "higuaifan",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
@@ -18,7 +19,6 @@
     "coverage": "vitest --coverage"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
