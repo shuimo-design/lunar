@@ -34,8 +34,10 @@
     "rename-esm": "for file in ./dist/es/types/index.d.ts; do mv \"$file\" \"${file%.d.ts}.d.mts\"; done",
     "rename-cjs": "for file in ./dist/cjs/types/index.d.ts; do mv \"$file\" \"${file%.d.ts}.d.cts\"; done"
   },
-  "keywords": [],
-  "license": "ISC",
+  "keywords": [
+    "lunar"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -48,5 +50,9 @@
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
     "vitest": "^1.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuimo-design/lunar.git"
   }
 }
