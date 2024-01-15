@@ -1,0 +1,35 @@
+{
+  "name": "@shuimo-design/lunar",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --bundleConfigAsCjs --configPlugin @rollup/plugin-typescript",
+    "test": "vitest",
+    "coverage": "vitest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@vitest/coverage-v8": "^1.2.0",
+    "dayjs": "^1.11.10",
+    "rollup": "^4.9.5",
+    "tslib": "^2.6.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.3"
+  }
+}
