@@ -1,7 +1,7 @@
 {
   "name": "@shuimo-design/lunar",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "javascript solar to chinese lunar tool",
   "author": "higuaifan",
   "browser": "dist/index.umd.js",
@@ -27,9 +27,12 @@
     "types"
   ],
   "scripts": {
-    "build": "rollup --config rollup.config.ts --bundleConfigAsCjs --configPlugin @rollup/plugin-typescript",
+    "build": "rollup --config rollup.config.ts --bundleConfigAsCjs --configPlugin @rollup/plugin-typescript && npm run rename",
     "test": "vitest",
-    "coverage": "vitest --coverage"
+    "coverage": "vitest --coverage",
+    "rename": "npm run rename-esm && npm run rename-cjs",
+    "rename-esm": "for file in ./dist/es/types/index.d.ts; do mv \"$file\" \"${file%.d.ts}.d.mts\"; done",
+    "rename-cjs": "for file in ./dist/cjs/types/index.d.ts; do mv \"$file\" \"${file%.d.ts}.d.cts\"; done"
   },
   "keywords": [],
   "license": "ISC",
