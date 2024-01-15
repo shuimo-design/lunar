@@ -20,24 +20,24 @@ export default ({
   ],
   output: [
     {
-      file: 'dist/index.js',
+      file: 'dist/cjs/index.cjs',
       format: 'cjs',
       sourcemap: true
     },
     {
-      file: 'dist/index.min.js',
+      file: 'dist/cjs/index.min.cjs',
       format: 'cjs',
       plugins: [terser()],
       sourcemap: true
     },
     {
-      file: 'dist/index.umd.js',
+      file: 'dist/umd/index.umd.js',
       format: 'umd',
       name: 'shuimo-design-lunar',
       sourcemap: true
     },
     {
-      file: 'dist/index.esm.js',
+      file: 'dist/es/index.mjs',
       format: 'esm',
       sourcemap: true
     }

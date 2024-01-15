@@ -1,18 +1,31 @@
 {
   "name": "@shuimo-design/lunar",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "javascript solar to chinese lunar tool",
   "author": "higuaifan",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
+  "types": "./dist/es/types/index.d.mts",
+  "main": "./dist/umd/index.umd.js",
+  "module": "./dist/es/index.mjs",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/es/types/index.d.mts",
+        "default": "./dist/es/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./*": "./*"
+  },
   "files": [
     "dist",
     "lib",
     "types"
   ],
-  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "rollup --config rollup.config.ts --bundleConfigAsCjs --configPlugin @rollup/plugin-typescript",
     "test": "vitest",
