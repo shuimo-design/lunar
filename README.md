@@ -54,3 +54,9 @@ const lunarDate = new lunar('2023-3-6')
 > 节气算法 https://github.com/OPN48/cnlunar
 >
 > 学习资料 https://ytliu0.github.io/ChineseCalendar/rules_simp.html
+
+
+### 文献
+
+> 陈久金. 中国古代时制研究及其换算[J]. 自然科学史研究, 1983 (2): 118-132.
+

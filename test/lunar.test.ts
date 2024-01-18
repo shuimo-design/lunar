@@ -112,49 +112,127 @@ describe('get lunar info test', async () => {
 
 
     describe('minute', () => {
-      it('2024-1-16 01:12:00', () => {
-        const l = lunar('2024-1-15 01:12:00');
+      it('初刻', () => {
+        const l = lunar('2024-1-15 01:00:00');
         expect(l.minute).toBe('初刻');
+        const l2 = lunar('2024-1-15 01:07:11');
+        expect(l2.minute).toBe('初刻');
       });
-      it('2024-1-16 01:15:00', () => {
-        const l = lunar('2024-1-15 01:15:00');
+
+      it('半刻', () => {
+        const l = lunar('2024-1-15 01:07:12');
+        expect(l.minute).toBe('半刻');
+        const l2 = lunar('2024-1-15 01:14:23');
+        expect(l2.minute).toBe('半刻');
+      });
+
+      it('一刻', () => {
+        const l = lunar('2024-1-15 01:14:24');
         expect(l.minute).toBe('一刻');
+        const l2 = lunar('2024-1-15 01:21:35');
+        expect(l2.minute).toBe('一刻');
       });
 
-      it('2024-1-16 01:30:00', () => {
-        const l = lunar('2024-1-15 01:30:00');
+      it('一刻半',()=>{
+        const l = lunar('2024-1-15 01:21:36');
+        expect(l.minute).toBe('一刻半');
+        const l2 = lunar('2024-1-15 01:28:47');
+        expect(l2.minute).toBe('一刻半');
+      })
+
+      it('二刻',()=>{
+        const l = lunar('2024-1-15 01:28:48');
         expect(l.minute).toBe('二刻');
-      });
+        const l2 = lunar('2024-1-15 01:35:59');
+        expect(l2.minute).toBe('二刻');
+      })
 
-      it('2024-1-16 01:45:00', () => {
-        const l = lunar('2024-1-15 01:45:00');
+      it('二刻半',()=>{
+        const l = lunar('2024-1-15 01:36:00');
+        expect(l.minute).toBe('二刻半');
+        const l2 = lunar('2024-1-15 01:43:11');
+        expect(l2.minute).toBe('二刻半');
+      })
+
+      it('三刻',()=>{
+        const l = lunar('2024-1-15 01:43:12');
         expect(l.minute).toBe('三刻');
-      });
+        const l2 = lunar('2024-1-15 01:50:23');
+        expect(l2.minute).toBe('三刻');
+      })
 
-      it('2024-1-16 01:59:00', () => {
-        const l = lunar('2024-1-15 01:59:00');
-        expect(l.minute).toBe('三刻');
-      });
+      it('三刻半',()=>{
+        const l = lunar('2024-1-15 01:50:24');
+        expect(l.minute).toBe('三刻半');
+        const l2 = lunar('2024-1-15 01:57:35');
+        expect(l2.minute).toBe('三刻半');
+      })
 
-      it('2024-1-16 02:00:00', () => {
-        const l = lunar('2024-1-15 02:00:00');
-        expect(l.minute).toBe('正刻');
-      });
+      it('四刻',()=>{
+        const l = lunar('2024-1-15 01:57:36');
+        expect(l.minute).toBe('四刻');
+        const l2 = lunar('2024-1-15 02:04:47');
+        expect(l2.minute).toBe('四刻');
+      })
 
-      it('2024-1-16 02:15:00', () => {
-        const l = lunar('2024-1-15 02:15:00');
+      it('四刻半',()=>{
+        const l = lunar('2024-1-15 02:04:48');
+        expect(l.minute).toBe('四刻半');
+        const l2 = lunar('2024-1-15 02:11:59');
+        expect(l2.minute).toBe('四刻半');
+      })
+
+      it('五刻',()=>{
+        const l = lunar('2024-1-15 02:12:00');
         expect(l.minute).toBe('五刻');
-      });
+        const l2 = lunar('2024-1-15 02:19:11');
+        expect(l2.minute).toBe('五刻');
+      })
 
-      it('2024-1-16 02:30:00', () => {
-        const l = lunar('2024-1-15 02:30:00');
+      it('五刻半',()=>{
+        const l = lunar('2024-1-15 02:19:12');
+        expect(l.minute).toBe('五刻半');
+        const l2 = lunar('2024-1-15 02:26:23');
+        expect(l2.minute).toBe('五刻半');
+      })
+
+      it('六刻',()=>{
+        const l = lunar('2024-1-15 02:26:24');
         expect(l.minute).toBe('六刻');
-      });
+        const l2 = lunar('2024-1-15 02:33:35');
+        expect(l2.minute).toBe('六刻');
+      })
 
-      it('2024-1-16 02:45:00', () => {
-        const l = lunar('2024-1-15 02:45:00');
+      it('六刻半',()=>{
+        const l = lunar('2024-1-15 02:33:36');
+        expect(l.minute).toBe('六刻半');
+        const l2 = lunar('2024-1-15 02:40:47');
+        expect(l2.minute).toBe('六刻半');
+      })
+
+      it('七刻',()=>{
+        const l = lunar('2024-1-15 02:40:48');
         expect(l.minute).toBe('七刻');
-      });
+        const l2 = lunar('2024-1-15 02:47:59');
+        expect(l2.minute).toBe('七刻');
+      })
+
+      it('七刻半',()=>{
+        const l = lunar('2024-1-15 02:48:00');
+        expect(l.minute).toBe('七刻半');
+        const l2 = lunar('2024-1-15 02:55:11');
+        expect(l2.minute).toBe('七刻半');
+      })
+
+      it('八刻',()=>{
+        const l = lunar('2024-1-15 02:55:12');
+        expect(l.minute).toBe('八刻');
+        const l2 = lunar('2024-1-15 02:59:59');
+        expect(l2.minute).toBe('八刻');
+        const l3 = lunar('2024-1-15 03:00:00');
+        expect(l3.minute).toBe('初刻');
+      })
+
     });
 
   });

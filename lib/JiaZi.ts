@@ -91,8 +91,17 @@ export const getTimeJiaZi = (date: DateTimeType) => {
   }
   lunarHour = TianGan[index] + lunarHour;
 
-  // 刻按照 明代后时期的刻法，即二小时8刻
-  const keIndex = Math.floor(date.minute / 15) + secondHour * 4;
+  /**
+   * 刻按照 文献 陈久金. 中国古代时制研究及其换算[J]. 自然科学史研究, 1983,(02): 118-132.
+   * 即7.2分半刻, 1小时55.2分后为八刻（小刻）
+   */
+    // const keIndex = Math.floor(date.minute / 7.2) + secondHour * 4;
+  const hourMinute = date.hour % 2 === 1 ? 0 : 60;
+  const calculateMinute = date.minute + hourMinute;
+  // 分钟小数
+  const minuteDecimal = date.second / 60;
+
+  const keIndex = Math.floor((calculateMinute + minuteDecimal) * 10 / 72);
   const lunarMinute = KE[keIndex];
 
 
