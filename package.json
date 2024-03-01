@@ -33,7 +33,8 @@
     "rename": "npm run rename-esm && npm run rename-cjs",
     "rename-esm": "for file in ./dist/es/types/index.d.ts; do mv \"$file\" \"${file%.d.ts}.d.mts\"; done",
     "rename-cjs": "for file in ./dist/cjs/types/index.d.ts; do mv \"$file\" \"${file%.d.ts}.d.cts\"; done",
-    "website:dev": "vite --config ./website/vite.config.ts"
+    "website:dev": "vite --config ./website/vite.config.ts",
+    "website:build": "vite --config ./website/vite.config.ts build"
   },
   "keywords": [
     "lunar"
