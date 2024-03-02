@@ -49,6 +49,9 @@ const sub = (unit:ManipulateType) => {
   display: flex;
   font-size: 8rem;
   line-height: 8rem;
+  position: absolute;
+  top:0;
+  z-index: 999;
 
 
   .time-divider {
