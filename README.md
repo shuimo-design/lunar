@@ -12,7 +12,7 @@ A Chinese lunar calendar conversion tool.
 ```typescript
 import { lunar } from '@shuimo-design/lunar';
 
-const lunarDate = new lunar('2024-01-15 17:07:00');
+const lunarDate = lunar('2024-01-15 17:07:00');
 /**
  *  response will be:
  *  {
@@ -31,7 +31,7 @@ const lunarDate = new lunar('2024-01-15 17:07:00');
 ```typescript
 import { lunar } from '@shuimo-design/lunar';
 
-const lunarDate = new lunar('2023-3-6')
+const lunarDate = lunar('2023-3-6')
 
 /**
  * response will be:
