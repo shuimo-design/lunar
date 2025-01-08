@@ -10,12 +10,12 @@
  */
 
 
-type SolarType = {
+type _SolarType = {
   day: number;
   month: number;
   year: number;
 }
-type LunarType = SolarType & {
+type _LunarType = _SolarType & {
   isLeap: boolean;
 }
 
@@ -95,8 +95,8 @@ const solarToInt = (y: number, m: number, d: number) => {
   return 365 * y + floor(y / 4) - floor(y / 100) + floor(y / 400) + floor((m * 306 + 5) / 10) + (d - 1);
 };
 
-export const solarToLunar = (solar: SolarType) => {
-  const lunar: LunarType = {
+export const solarToLunar = (solar: _SolarType) => {
+  const lunar: _LunarType = {
     isLeap: false, day: 0, month: 0, year: 0
   };
   let index = solar.year - SOLAR_1_1[0];

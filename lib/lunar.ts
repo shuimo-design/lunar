@@ -10,8 +10,10 @@ import { solarToLunar } from './lunarDay';
 import { getDayJiaZi, getMonthJiaZi, getTimeJiaZi, getYearJiaZi } from './JiaZi';
 import { getTermsByYear } from './terms';
 import { datetimeFormat } from './tools/datetimeFormat';
+import { LunarType } from './tools/constant';
 
-export const lunar = (datetime: Date | string | number) => {
+
+export const lunar = (datetime: Date | string | number): LunarType => {
 
   const dObj = datetimeFormat(datetime);
 
@@ -19,7 +21,7 @@ export const lunar = (datetime: Date | string | number) => {
   const lunarYear = getYearJiaZi(lunarDate.year);
 
   const terms = getTermsByYear(dObj.year);
-  let term: undefined | string;
+  let term: LunarType['term'];
 
   terms.forEach(t => {
     if (t.m === dObj.month && t.d === dObj.day) {
@@ -39,7 +41,7 @@ export const lunar = (datetime: Date | string | number) => {
     day: lunarDay,
     hour: lunarHour,
     minute: lunarMinute,
-    term
+    term,
   };
 
 };

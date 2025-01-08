@@ -6,15 +6,15 @@
  *
  * 江湖的业务千篇一律，复杂的代码好几百行。
  */
-import { DiZhi, KE, LiuShiJiaZi, TermInfoType, TianGan } from './tools/constant';
+import { DiZhi, JiaZiType, KE, LiuShiJiaZi, TermInfoType, TianGan } from './tools/constant';
 import { DateTimeType } from './tools/datetimeFormat';
 
-export const getYearJiaZi = (year: number) => {
+export const getYearJiaZi = (year: number): JiaZiType => {
   const index = (year - 4) % 60;
   return LiuShiJiaZi[index];
 };
 
-export const getMonthJiaZi = (terms: TermInfoType[], date: DateTimeType) => {
+export const getMonthJiaZi = (terms: TermInfoType[], date: DateTimeType): JiaZiType => {
   // 获取terms的单数index值
   const needPrev = () => {
     for (let i = 0; i < terms.length; i++) {
@@ -41,7 +41,7 @@ export const getMonthJiaZi = (terms: TermInfoType[], date: DateTimeType) => {
   return LiuShiJiaZi[index % 60];
 };
 
-export const getDayJiaZi = (date: DateTimeType) => {
+export const getDayJiaZi = (date: DateTimeType): JiaZiType => {
   // 日是六十天一轮回，已知2024年4月30日是甲子日
   // 那么根据给定日期和甲子日的差值，就可以得到日的干支
   const startDate = new Date('2024-4-30 00:00:00');
@@ -53,7 +53,6 @@ export const getDayJiaZi = (date: DateTimeType) => {
   }
   return LiuShiJiaZi[index];
 };
-
 
 const getHourDiZhi = (hour: number) => {
   let lunarHour = '';
@@ -69,7 +68,7 @@ const getHourDiZhi = (hour: number) => {
   }
   return {
     lunarHour,
-    secondHour
+    secondHour,
   };
 };
 
@@ -107,7 +106,7 @@ export const getTimeJiaZi = (date: DateTimeType) => {
 
   return {
     lunarHour,
-    lunarMinute
+    lunarMinute,
   };
 
 };
