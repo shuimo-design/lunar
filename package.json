@@ -1,7 +1,7 @@
 {
   "name": "@shuimo-design/lunar",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "javascript solar to chinese lunar tool",
   "author": "higuaifan",
   "browser": "dist/index.umd.js",
