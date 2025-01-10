@@ -10,7 +10,7 @@
 export type TianGanType = '甲' | '乙' | '丙' | '丁' | '戊' | '己' | '庚' | '辛' | '壬' | '癸';
 export type DiZhiType = '子' | '丑' | '寅' | '卯' | '辰' | '巳' | '午' | '未' | '申' | '酉' | '戌' | '亥';
 export type JiaZiType = `${TianGanType}${DiZhiType}`;
-export type SolarTermType = '小寒' | '大寒' | '立春' | '雨水' | '惊蛰' | '春分' | '清明' | '谷雨' | '立夏' | '小满' | '芒种' | '夏至'|
+export type SolarTermType = '小寒' | '大寒' | '立春' | '雨水' | '惊蛰' | '春分' | '清明' | '谷雨' | '立夏' | '小满' | '芒种' | '夏至' |
   '小暑' | '大暑' | '立秋' | '处暑' | '白露' | '秋分' | '寒露' | '霜降' | '立冬' | '小雪' | '大雪' | '冬至';
 
 // 天干 甲、乙、丙、丁、戊、己、庚、辛、壬、癸
@@ -28,7 +28,7 @@ export const LiuShiJiaZi: JiaZiType[] = [
   '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥',
 ];
 
-export const SOLAR_TERMS_NAME_LIST:SolarTermType[] = [
+export const SOLAR_TERMS_NAME_LIST: SolarTermType[] = [
   '小寒', '大寒', // 农历十二月
   '立春', '雨水', // 农历正月
   '惊蛰', '春分', // 农历二月
@@ -67,10 +67,11 @@ export type LunarType = {
   day?: JiaZiType;
   hour?: string;
   minute?: string;
-  lunarDate:{
-      year: number;
-      month: number;
-      day: number;
+  lunarDate: {
+    year: number;
+    month: number;
+    day: number;
+    isLeap: boolean;
   },
   term?: string;
 }
