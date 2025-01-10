@@ -41,6 +41,7 @@ export const lunar = (datetime: Date | string | number): LunarType => {
     day: lunarDay,
     hour: lunarHour,
     minute: lunarMinute,
+    lunarDate,
     term,
   };
 

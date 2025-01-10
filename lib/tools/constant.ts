@@ -63,9 +63,14 @@ export const KE = [
 
 export type LunarType = {
   year: JiaZiType;
-  month: JiaZiType;
-  day: JiaZiType;
-  hour: string;
-  minute: string;
+  month?: JiaZiType;
+  day?: JiaZiType;
+  hour?: string;
+  minute?: string;
+  lunarDate:{
+      year: number;
+      month: number;
+      day: number;
+  },
   term?: string;
 }

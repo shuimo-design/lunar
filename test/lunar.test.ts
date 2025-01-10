@@ -65,6 +65,7 @@ describe('get lunar info test', async () => {
       expect(l.month).toBe('丁亥');
       expect(l.day).toBe('癸亥');
     });
+
   });
 
   describe('datetime', () => {
@@ -109,7 +110,6 @@ describe('get lunar info test', async () => {
         expect(l.minute).toBe('初刻');
       });
     });
-
 
     describe('minute', () => {
       it('初刻', () => {
@@ -237,5 +237,20 @@ describe('get lunar info test', async () => {
 
   });
 
+  describe('lunar date',()=>{
+    it('2025-1-9',()=>{
+      const l = lunar('2025-1-9');
+      const {year,month,day} = l.lunarDate;
+      expect(year).toBe(2024);
+      expect(month).toBe(12);
+      expect(day).toBe(10);
+    })
+
+    it('leap month',()=>{
+      expect(lunar('2025-6-25').lunarDate).toMatchObject({ isLeap: false, day: 1, month: 6, year: 2025 });
+      expect(lunar('2025-7-25').lunarDate).toMatchObject({ isLeap: true, day: 1, month: 6, year: 2025 });
+      expect(lunar('2025-8-23').lunarDate).toMatchObject({ isLeap: false, day: 1, month: 7, year: 2025 });
+    })
+  })
 
 });
