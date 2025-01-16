@@ -9,6 +9,11 @@
 import { DiZhi, JiaZiType, KE, LiuShiJiaZi, TermInfoType, TianGan } from './tools/constant';
 import { DateTimeType } from './tools/datetimeFormat';
 
+const toDate = (date: DateTimeType) => {
+  const { year, month, day, hour = 0, minute = 0, second = 0 } = date;
+  return new Date(`${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:${String(second).padStart(2, '0')}`);
+};
+
 export const getYearJiaZi = (year: number): JiaZiType => {
   const index = (year - 4) % 60;
   return LiuShiJiaZi[index];
@@ -44,8 +49,8 @@ export const getMonthJiaZi = (terms: TermInfoType[], date: DateTimeType): JiaZiT
 export const getDayJiaZi = (date: DateTimeType): JiaZiType => {
   // 日是六十天一轮回，已知2024年4月30日是甲子日
   // 那么根据给定日期和甲子日的差值，就可以得到日的干支
-  const startDate = new Date('2024-4-30 00:00:00');
-  const endDate = new Date(`${date.year}-${date.month}-${date.day} 00:00:00`);
+  const startDate = new Date('2024-04-30T00:00:00');
+  const endDate = toDate({ ...date, hour: 0, minute: 0, second: 0 });
   const diff = (endDate.getTime() - startDate.getTime()) / 1000 / 60 / 60 / 24;
   let index = diff % 60;
   if (index < 0) {
@@ -81,8 +86,8 @@ export const getTimeJiaZi = (date: DateTimeType) => {
 
   // 已知2024年1月16日是甲子日
   // 那么根据给定日期和甲子日的差值，就可以得到日的干支
-  const startDate = new Date('2024-1-15 23:00:00');
-  const endDate = new Date(`${date.year}-${date.month}-${date.day} ${date.hour}:00:00`);
+  const startDate = new Date('2024-01-15T23:00:00');
+  const endDate = toDate({ ...date, minute: 0, second: 0 });
   const diff = Math.floor((endDate.getTime() - startDate.getTime()) / 1000 / 60 / 60 / 2);
   let index = diff % 10;
   if (index < 0) {
